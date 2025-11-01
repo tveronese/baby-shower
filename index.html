@@ -16,6 +16,13 @@
             --peach: #F5D6C4;
             --baby-blue: #B8D4E3;
             --gray-beige: #E8DDD0;
+            /* Expanded pastel palette */
+            --lavender: #E8D5E3;
+            --mint: #D4E8DC;
+            --powder-pink: #F5D6E8;
+            --soft-yellow: #FFF4D6;
+            --sage: #D8E0D3;
+            --periwinkle: #D6DEF5;
         }
 
         body {
@@ -39,11 +46,61 @@
             transform: translateY(0);
         }
 
+        /* Gradient backgrounds */
+        .gradient-hero {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--peach) 50%, var(--lavender) 100%);
+        }
+
+        .gradient-section-1 {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--mint) 100%);
+        }
+
+        .gradient-section-2 {
+            background: linear-gradient(180deg, var(--mint) 0%, var(--cream) 100%);
+        }
+
+        .gradient-section-3 {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--powder-pink) 100%);
+        }
+
         .card {
             background: white;
             border-radius: 16px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Pastel borders on cards */
+        .card-border-peach {
+            border: 3px solid var(--peach);
+        }
+
+        .card-border-lavender {
+            border: 3px solid var(--lavender);
+        }
+
+        .card-border-mint {
+            border: 3px solid var(--mint);
+        }
+
+        .card-border-blue {
+            border: 3px solid var(--baby-blue);
+        }
+
+        .card-border-yellow {
+            border: 3px solid var(--soft-yellow);
+        }
+
+        .card-border-sage {
+            border: 3px solid var(--sage);
+        }
+
+        .card-border-pink {
+            border: 3px solid var(--powder-pink);
+        }
+
+        .card-border-periwinkle {
+            border: 3px solid var(--periwinkle);
         }
 
         .card:hover {
@@ -60,6 +117,84 @@
         .btn-primary:hover {
             background-color: #C4B39E;
             transform: translateY(-2px);
+        }
+
+        /* Colored text highlights */
+        .text-highlight-peach {
+            color: var(--peach);
+            font-weight: 600;
+        }
+
+        .text-highlight-lavender {
+            color: var(--lavender);
+            font-weight: 600;
+        }
+
+        .text-highlight-mint {
+            color: var(--mint);
+            font-weight: 600;
+        }
+
+        /* Photo frame */
+        .photo-frame {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--peach) 50%, var(--mint) 100%);
+            border-radius: 24px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-frame img {
+            border-radius: 12px;
+            border: 4px solid white;
+        }
+
+        /* Decorative stars */
+        .star {
+            position: absolute;
+            color: var(--beige);
+            opacity: 0.3;
+            font-size: 1.5rem;
+            animation: twinkle 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .star.lavender {
+            color: var(--lavender);
+        }
+
+        .star.peach {
+            color: var(--peach);
+        }
+
+        .star.mint {
+            color: var(--mint);
+        }
+
+        .star.blue {
+            color: var(--baby-blue);
+        }
+
+        .star.pink {
+            color: var(--powder-pink);
+        }
+
+        .star.yellow {
+            color: var(--soft-yellow);
+        }
+
+        .star.periwinkle {
+            color: var(--periwinkle);
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(1.1);
+            }
         }
 
         .section-padding {
@@ -88,20 +223,29 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center section-padding relative overflow-hidden">
-        <div class="fade-in max-w-4xl mx-auto">
+    <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center section-padding relative overflow-hidden gradient-hero">
+        <!-- Decorative stars -->
+        <div class="star peach" style="top: 10%; left: 5%; animation-delay: 0s;">★</div>
+        <div class="star lavender" style="top: 20%; right: 8%; animation-delay: 0.5s;">★</div>
+        <div class="star mint" style="top: 60%; left: 3%; animation-delay: 1s;">★</div>
+        <div class="star blue" style="top: 75%; right: 5%; animation-delay: 1.5s;">★</div>
+        <div class="star peach" style="top: 30%; right: 15%; animation-delay: 2s;">★</div>
+        <div class="star lavender" style="bottom: 15%; left: 12%; animation-delay: 0.8s;">★</div>
+        <div class="star mint" style="bottom: 25%; right: 18%; animation-delay: 2.2s;">★</div>
+        
+        <div class="fade-in max-w-4xl mx-auto relative z-10">
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-[var(--beige)]">
                 <span data-en="Welcome to Our Baby Shower 🎉" data-pt="Bem-vindos ao Nosso Chá de Bebê 🎉"></span>
             </h1>
             <p class="text-xl md:text-2xl mb-8 script-font text-[var(--text-dark)]">
-                <span data-en="We're so excited to welcome our new baby boy! Instead of traditional gifts, we're inviting you to share joy in a meaningful way." data-pt="Estamos muito felizes em receber nosso novo bebê! Em vez de presentes tradicionais, convidamos você a compartilhar alegria de uma forma significativa."></span>
+                <span data-en="We're so excited to welcome our <span class='text-highlight-peach'>new baby boy</span>! Instead of traditional gifts, we're inviting you to share joy in a meaningful way." data-pt="Estamos muito felizes em receber nosso <span class='text-highlight-peach'>novo bebê</span>! Em vez de presentes tradicionais, convidamos você a compartilhar alegria de uma forma significativa."></span>
             </p>
             <div class="max-w-2xl mx-auto mb-8 text-lg md:text-xl leading-relaxed">
-                <p data-en="Your presence and love mean the world to us. If you'd like to celebrate in a special way, we'd be honored if you'd consider contributing to a cause close to our hearts." data-pt="Sua presença e amor significam tudo para nós. Se você gostaria de celebrar de uma forma especial, ficaríamos honrados se você considerasse contribuir para uma causa próxima ao nosso coração."></p>
+                <p data-en="Your presence and love mean a lot to us. If you'd like to celebrate in a special way, we'd be honored if you'd consider contributing to a <span class='text-highlight-lavender'>cause close to our hearts</span>." data-pt="Sua presença e amor significam muito para nós. Se você gostaria de celebrar de uma forma especial, ficaríamos honrados se você considerasse contribuir para uma <span class='text-highlight-lavender'>causa próxima ao nosso coração</span>."></p>
             </div>
             
             <!-- FAMILY_PHOTO_PLACEHOLDER -->
-            <div class="mt-8 mb-8 rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto">
+            <div class="mt-8 mb-8 max-w-md mx-auto photo-frame">
                 <img src="https://via.placeholder.com/600x400/F5D6C4/D4C4B0?text=Family+Photo" 
                      alt="Family" 
                      class="w-full h-auto object-cover">
@@ -110,9 +254,13 @@
     </section>
 
     <!-- Event Details Section -->
-    <section id="event-details" class="section-padding bg-[var(--gray-beige)]/30">
+    <section id="event-details" class="section-padding gradient-section-1 relative overflow-hidden">
+        <!-- Decorative stars -->
+        <div class="star mint" style="top: 15%; left: 8%; animation-delay: 0.3s;">★</div>
+        <div class="star peach" style="bottom: 20%; right: 10%; animation-delay: 1.2s;">★</div>
+        
         <div class="max-w-4xl mx-auto fade-in">
-            <div class="card p-8 md:p-12">
+            <div class="card card-border-mint p-8 md:p-12">
                 <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center text-[var(--beige)]">
                     <span class="script-font text-5xl md:text-6xl block mb-2">
                         <span data-en="Join Us for the Celebration" data-pt="Junte-se a Nós na Celebração"></span>
@@ -121,7 +269,7 @@
                 
                 <div class="space-y-6 text-center">
                     <div class="text-2xl md:text-3xl">
-                        <span class="font-semibold" data-en="November 8th" data-pt="8 de Novembro"></span>
+                        <span class="font-semibold text-highlight-lavender" data-en="November 8th" data-pt="8 de Novembro"></span>
                     </div>
                     
                     <div class="text-xl md:text-2xl">
@@ -148,20 +296,24 @@
     </section>
 
     <!-- Oliver's 4th Birthday Donation Section -->
-    <section id="donation" class="section-padding">
+    <section id="donation" class="section-padding gradient-section-2 relative overflow-hidden">
+        <!-- Decorative stars -->
+        <div class="star blue" style="top: 10%; right: 12%; animation-delay: 0.6s;">★</div>
+        <div class="star lavender" style="bottom: 30%; left: 5%; animation-delay: 1.8s;">★</div>
+        
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12 fade-in">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--beige)]">
                     <span data-en="What We Achieved Together 🐾" data-pt="O Que Conseguimos Juntos 🐾"></span>
                 </h2>
                 <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                    <span data-en="For Oliver's 4th birthday, we raised €130 (including our contribution) to buy food and supplies for rescued animals at a shelter in Colombia — where Adriana grew up. Here's how your kindness made a difference." data-pt="Para o 4º aniversário do Oliver, arrecadamos €130 (incluindo nossa contribuição) para comprar comida e suprimentos para animais resgatados em um abrigo na Colômbia — onde a Adriana cresceu. Veja como sua bondade fez a diferença."></span>
+                    <span data-en="For Oliver's 4th birthday, we raised <span class='text-highlight-mint'>€130</span> (including our contribution) to buy food and supplies for rescued animals at a shelter in <span class='text-highlight-peach'>Colombia</span> — where Adriana grew up. Here's how your kindness made a difference." data-pt="Para o 4º aniversário do Oliver, arrecadamos <span class='text-highlight-mint'>€130</span> (incluindo nossa contribuição) para comprar comida e suprimentos para animais resgatados em um abrigo na <span class='text-highlight-peach'>Colômbia</span> — onde a Adriana cresceu. Veja como sua bondade fez a diferença."></span>
                 </p>
             </div>
 
             <!-- SHELTER_PHOTOS_PLACEHOLDER -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="fade-in card overflow-hidden">
+                <div class="fade-in card card-border-peach overflow-hidden">
                     <img src="https://via.placeholder.com/400x300/F5D6C4/D4C4B0?text=Shelter+Photo+1" 
                          alt="Animal shelter" 
                          class="w-full h-64 object-cover">
@@ -172,7 +324,7 @@
                     </div>
                 </div>
                 
-                <div class="fade-in card overflow-hidden">
+                <div class="fade-in card card-border-blue overflow-hidden">
                     <img src="https://via.placeholder.com/400x300/F5D6C4/D4C4B0?text=Shelter+Photo+2" 
                          alt="Rescued animals" 
                          class="w-full h-64 object-cover">
@@ -183,7 +335,7 @@
                     </div>
                 </div>
                 
-                <div class="fade-in card overflow-hidden">
+                <div class="fade-in card card-border-mint overflow-hidden">
                     <img src="https://via.placeholder.com/400x300/F5D6C4/D4C4B0?text=Shelter+Photo+3" 
                          alt="Animal care" 
                          class="w-full h-64 object-cover">
@@ -197,7 +349,7 @@
 
             <!-- SHELTER_VIDEO_PLACEHOLDER -->
             <div class="fade-in max-w-3xl mx-auto">
-                <div class="card overflow-hidden">
+                <div class="card card-border-lavender overflow-hidden">
                     <div class="aspect-video bg-gray-200 flex items-center justify-center">
                         <p class="text-gray-500">
                             <span data-en="Video placeholder - Add your shelter video here" data-pt="Espaço para vídeo - Adicione seu vídeo do abrigo aqui"></span>
@@ -218,20 +370,25 @@
     </section>
 
     <!-- Gift Options Section -->
-    <section id="gifts" class="section-padding bg-[var(--gray-beige)]/30">
+    <section id="gifts" class="section-padding gradient-section-3 relative overflow-hidden">
+        <!-- Decorative stars -->
+        <div class="star pink" style="top: 20%; left: 7%; animation-delay: 0.4s;">★</div>
+        <div class="star yellow" style="bottom: 25%; right: 8%; animation-delay: 1.5s;">★</div>
+        <div class="star periwinkle" style="top: 50%; right: 15%; animation-delay: 2.5s;">★</div>
+        
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12 fade-in">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--beige)]">
                     <span data-en="Still Want to Give a Gift?" data-pt="Ainda Quer Dar um Presente?"></span>
                 </h2>
                 <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                    <span data-en="Your presence and love are more than enough! But if you'd like to give a small present, here are a few easy options." data-pt="Sua presença e amor são mais que suficientes! Mas se você gostaria de dar um pequeno presente, aqui estão algumas opções fáceis."></span>
+                    <span data-en="Your presence and love are more than enough! But if you'd like to give a <span class='text-highlight-mint'>small present</span>, here are a few easy options." data-pt="Sua presença e amor são mais que suficientes! Mas se você gostaria de dar um <span class='text-highlight-mint'>pequeno presente</span>, aqui estão algumas opções fáceis."></span>
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <!-- Amazon Gift Card Option -->
-                <div class="fade-in card p-8">
+                <div class="fade-in card card-border-periwinkle p-8">
                     <h3 class="text-2xl font-bold mb-4 text-[var(--beige)]">
                         <span data-en="Amazon Spain Gift Card" data-pt="Vale-presente Amazon Espanha"></span>
                     </h3>
@@ -248,7 +405,7 @@
                 </div>
 
                 <!-- PayPal Donation Option -->
-                <div class="fade-in card p-8">
+                <div class="fade-in card card-border-pink p-8">
                     <h3 class="text-2xl font-bold mb-4 text-[var(--beige)]">
                         <span data-en="Direct Contribution" data-pt="Contribuição Direta"></span>
                     </h3>
@@ -267,14 +424,14 @@
 
             <!-- GIFT_OPTIONS_PLACEHOLDER -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="fade-in card p-6">
+                <div class="fade-in card card-border-peach p-6">
                     <h4 class="text-xl font-bold mb-2 text-[var(--beige)]">
                         <span data-en="Baby Clothes Set" data-pt="Conjunto de Roupas de Bebê"></span>
                     </h4>
                     <p class="text-sm text-gray-600 mb-4">
                         <span data-en="Soft, organic cotton set for newborns (0-3 months)" data-pt="Conjunto de algodão orgânico macio para recém-nascidos (0-3 meses)"></span>
                     </p>
-                    <p class="text-lg font-semibold mb-4">€25</p>
+                    <p class="text-lg font-semibold mb-4 text-highlight-peach">€25</p>
                     <!-- PAYPAL_LINK_PLACEHOLDER -->
                     <a href="https://paypal.me/yourusername?amount=25" 
                        target="_blank" 
@@ -284,14 +441,14 @@
                     </a>
                 </div>
 
-                <div class="fade-in card p-6">
+                <div class="fade-in card card-border-blue p-6">
                     <h4 class="text-xl font-bold mb-2 text-[var(--beige)]">
                         <span data-en="Baby Blanket" data-pt="Manta de Bebê"></span>
                     </h4>
                     <p class="text-sm text-gray-600 mb-4">
                         <span data-en="Cozy, hypoallergenic blanket perfect for cuddling" data-pt="Manta aconchegante e hipoalergênica perfeita para embalar"></span>
                     </p>
-                    <p class="text-lg font-semibold mb-4">€30</p>
+                    <p class="text-lg font-semibold mb-4 text-highlight-lavender">€30</p>
                     <!-- PAYPAL_LINK_PLACEHOLDER -->
                     <a href="https://paypal.me/yourusername?amount=30" 
                        target="_blank" 
@@ -301,14 +458,14 @@
                     </a>
                 </div>
 
-                <div class="fade-in card p-6">
+                <div class="fade-in card card-border-yellow p-6">
                     <h4 class="text-xl font-bold mb-2 text-[var(--beige)]">
                         <span data-en="Nursing Pillow" data-pt="Travesseiro de Amamentação"></span>
                     </h4>
                     <p class="text-sm text-gray-600 mb-4">
                         <span data-en="Ergonomic pillow for comfortable feeding" data-pt="Travesseiro ergonômico para alimentação confortável"></span>
                     </p>
-                    <p class="text-lg font-semibold mb-4">€35</p>
+                    <p class="text-lg font-semibold mb-4" style="color: var(--soft-yellow);">€35</p>
                     <!-- PAYPAL_LINK_PLACEHOLDER -->
                     <a href="https://paypal.me/yourusername?amount=35" 
                        target="_blank" 
@@ -318,14 +475,14 @@
                     </a>
                 </div>
 
-                <div class="fade-in card p-6">
+                <div class="fade-in card card-border-sage p-6">
                     <h4 class="text-xl font-bold mb-2 text-[var(--beige)]">
                         <span data-en="Diaper Bag" data-pt="Bolsa de Fraldas"></span>
                     </h4>
                     <p class="text-sm text-gray-600 mb-4">
                         <span data-en="Spacious, stylish bag with multiple compartments" data-pt="Bolsa espaçosa e elegante com vários compartimentos"></span>
                     </p>
-                    <p class="text-lg font-semibold mb-4">€40</p>
+                    <p class="text-lg font-semibold mb-4 text-highlight-mint">€40</p>
                     <!-- PAYPAL_LINK_PLACEHOLDER -->
                     <a href="https://paypal.me/yourusername?amount=40" 
                        target="_blank" 
@@ -339,10 +496,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="section-padding bg-[var(--beige)]/20 text-center">
+    <footer class="section-padding text-center relative overflow-hidden" style="background: linear-gradient(180deg, var(--powder-pink) 0%, var(--lavender) 50%, var(--cream) 100%);">
+        <!-- Decorative stars -->
+        <div class="star peach" style="top: 20%; left: 10%; animation-delay: 0.7s;">★</div>
+        <div class="star mint" style="bottom: 30%; right: 12%; animation-delay: 1.3s;">★</div>
+        
         <div class="max-w-4xl mx-auto fade-in">
             <p class="text-xl md:text-2xl script-font mb-4">
-                <span data-en="Thank you for being part of our growing family — your kindness means the world to us 💛" data-pt="Obrigado por fazer parte da nossa família em crescimento — sua bondade significa o mundo para nós 💛"></span>
+                <span data-en="Thank you for being part of our growing family — your kindness means a lot to us 💛" data-pt="Obrigado por fazer parte da nossa família em crescimento — sua bondade significa muito para nós 💛"></span>
             </p>
         </div>
     </footer>
@@ -370,7 +531,7 @@
                 langText: 'EN',
                 heroTitle: "Bem-vindos ao Nosso Chá de Bebê 🎉",
                 heroSubtext: "Estamos muito felizes em receber nosso novo bebê! Em vez de presentes tradicionais, convidamos você a compartilhar alegria de uma forma significativa.",
-                heroParagraph: "Sua presença e amor significam tudo para nós. Se você gostaria de celebrar de uma forma especial, ficaríamos honrados se você considerasse contribuir para uma causa próxima ao nosso coração.",
+                heroParagraph: "Sua presença e amor significam muito para nós. Se você gostaria de celebrar de uma forma especial, ficaríamos honrados se você considerasse contribuir para uma causa próxima ao nosso coração.",
                 eventTitle: "Junte-se a Nós na Celebração",
                 eventDate: "8 de Novembro",
                 eventTime: "às 12h30",
@@ -406,7 +567,12 @@
                     if (el.tagName === 'IMG') {
                         el.alt = text;
                     } else {
-                        el.textContent = text;
+                        // Check if text contains HTML tags
+                        if (text.includes('<')) {
+                            el.innerHTML = text;
+                        } else {
+                            el.textContent = text;
+                        }
                     }
                 }
             });
