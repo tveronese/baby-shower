@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FDF9F6;
+            --beige: #D4C4B0;
+            --text-dark: #2C2416;
+            --peach: #F5D6C4;
+            --baby-blue: #B8D4E3;
+            --gray-beige: #E8DDD0;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text-dark);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .script-font {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--beige);
+            color: var(--text-dark);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #C4B39E;
+            transform: translateY(-2px);
+        }
+
+        .section-padding {
+            padding: 5rem 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 8rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle Button -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="langToggle" class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md hover:bg-white transition-colors text-sm font-medium text-[var(--text-dark)] border border-[var(--beige)]">
+            <span id="langText">PT</span>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center section-padding relative overflow-hidden">
+        <div class="fade-in max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-[var(--beige)]">
+                <span data-en="Welcome to Our Baby Shower 🎉" data-pt="Bem-vindos ao Nosso Chá de Bebê 🎉"></span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 script-font text-[var(--text-dark)]">
+                <span data-en="We're so excited to welcome our new baby boy! Instead of traditional gifts, we're inviting you to share joy in a meaningful way." data-pt="Estamos muito felizes em receber nosso novo bebê! Em vez de presentes tradicionais, convidamos você a compartilhar alegria de uma forma significativa."></span>
+            </p>
+            <div class="max-w-2xl mx-auto mb-8 text-lg md:text-xl leading-relaxed">
+                <p data-en="Your presence and love mean the world to us. If you'd like to celebrate in a special way, we'd be honored if you'd consider contributing to a cause close to our hearts." data-pt="Sua presença e amor significam tudo para nós. Se você gostaria de celebrar de uma forma especial, ficaríamos honrados se você considerasse contribuir para uma causa próxima ao nosso coração."></p>
+            </div>
+            
+            <!-- FAMILY_PHOTO_PLACEHOLDER -->
+            <div class="mt-8 mb-8 rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto">
+                <img src="https://via.placeholder.com/600x400/F5D6C4/D4C4B0?text=Family+Photo" 
+                     alt="Family" 
+                     class="w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section id="event-details" class="section-padding bg-[var(--gray-beige)]/30">
+        <div class="max-w-4xl mx-auto fade-in">
+            <div class="card p-8 md:p-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center text-[var(--beige)]">
+                    <span class="script-font text-5xl md:text-6xl block mb-2">
+                        <span data-en="Join Us for the Celebration" data-pt="Junte-se a Nós na Celebração"></span>
+                    </span>
+                </h2>
+                
+                <div class="space-y-6 text-center">
+                    <div class="text-2xl md:text-3xl">
+                        <span class="font-semibold" data-en="November 8th" data-pt="8 de Novembro"></span>
+                    </div>
+                    
+                    <div class="text-xl md:text-2xl">
+                        <span data-en="at 12:30 PM" data-pt="às 12h30"></span>
+                    </div>
+                    
+                    <div class="text-lg md:text-xl leading-relaxed pt-4">
+                        <p data-en="Rua das Andresas 227" data-pt="Rua das Andresas 227"></p>
+                        <p data-en="Salão de Festas" data-pt="Salão de Festas"></p>
+                        <p data-en="Porto, Portugal" data-pt="Porto, Portugal"></p>
+                    </div>
+                    
+                    <div class="pt-6">
+                        <a href="https://maps.app.goo.gl/Fy95tRPXx8S2xatr6" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="btn-primary inline-block px-8 py-3 rounded-full font-semibold text-lg">
+                            <span data-en="View on Google Maps" data-pt="Ver no Google Maps"></span> 📍
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oliver's 4th Birthday Donation Section -->
+    <section id="donation" class="section-padding">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--beige)]">
+                    <span data-en="What We Achieved Together 🐾" data-pt="O Que Conseguimos Juntos 🐾"></span>
+                </h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                    <span data-en="For Oliver's 4th birthday, we raised €130 (including our contribution) to buy food and supplies for rescued animals at a shelter in Colombia — where Adriana grew up. Here's how your kindness made a difference." data-pt="Para o 4º aniversário do Oliver, arrecadamos €130 (incluindo nossa contribuição) para comprar comida e suprimentos para animais resgatados em um abrigo na Colômbia — onde a Adriana cresceu. Veja como sua bondade fez a diferença."></span>
+                </p>
+            </div>
+
+            <!-- SHELTER_PHOTOS_PLACEHOLDER -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="fade-in card overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/F5D6C4/D4C4B0?text=Shelter+Photo+1" 
+                         alt="Animal shelter" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm text-gray-600 italic">
+                            <span data-en="Food delivery at the shelter" data-pt="Entrega de comida no abrigo"></span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="fade-in card overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/F5D6C4/D4C4B0?text=Shelter+Photo+2" 
+                         alt="Rescued animals" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm text-gray-600 italic">
+                            <span data-en="Happy rescued animals" data-pt="Animais resgatados felizes"></span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="fade-in card overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300/F5D6C4/D4C4B0?text=Shelter+Photo+3" 
+                         alt="Animal care" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm text-gray-600 italic">
+                            <span data-en="Caring for the animals" data-pt="Cuidando dos animais"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SHELTER_VIDEO_PLACEHOLDER -->
+            <div class="fade-in max-w-3xl mx-auto">
+                <div class="card overflow-hidden">
+                    <div class="aspect-video bg-gray-200 flex items-center justify-center">
+                        <p class="text-gray-500">
+                            <span data-en="Video placeholder - Add your shelter video here" data-pt="Espaço para vídeo - Adicione seu vídeo do abrigo aqui"></span>
+                        </p>
+                        <!-- <video class="w-full h-full object-cover" controls>
+                            <source src="path/to/video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video> -->
+                    </div>
+                    <div class="p-4">
+                        <p class="text-sm text-gray-600 italic">
+                            <span data-en="Video of the donation delivery" data-pt="Vídeo da entrega da doação"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Options Section -->
+    <section id="gifts" class="section-padding bg-[var(--gray-beige)]/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--beige)]">
+                    <span data-en="Still Want to Give a Gift?" data-pt="Ainda Quer Dar um Presente?"></span>
+                </h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                    <span data-en="Your presence and love are more than enough! But if you'd like to give a small present, here are a few easy options." data-pt="Sua presença e amor são mais que suficientes! Mas se você gostaria de dar um pequeno presente, aqui estão algumas opções fáceis."></span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Amazon Gift Card Option -->
+                <div class="fade-in card p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-[var(--beige)]">
+                        <span data-en="Amazon Spain Gift Card" data-pt="Vale-presente Amazon Espanha"></span>
+                    </h3>
+                    <p class="mb-6 leading-relaxed">
+                        <span data-en="A convenient way to let us choose what we need most for our little one." data-pt="Uma forma conveniente de nos deixar escolher o que mais precisamos para nosso pequeno."></span>
+                    </p>
+                    <!-- AMAZON_LINK_PLACEHOLDER -->
+                    <a href="https://www.amazon.es/gp/product/B08C5XGF3Y" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn-primary inline-block px-6 py-3 rounded-full font-semibold">
+                        <span data-en="Get Gift Card" data-pt="Obter Vale-presente"></span> 🎁
+                    </a>
+                </div>
+
+                <!-- PayPal Donation Option -->
+                <div class="fade-in card p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-[var(--beige)]">
+                        <span data-en="Direct Contribution" data-pt="Contribuição Direta"></span>
+                    </h3>
+                    <p class="mb-6 leading-relaxed">
+                        <span data-en="A direct way to contribute towards something special for our baby." data-pt="Uma forma direta de contribuir para algo especial para nosso bebê."></span>
+                    </p>
+                    <!-- PAYPAL_LINK_PLACEHOLDER -->
+                    <a href="https://paypal.me/yourusername" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn-primary inline-block px-6 py-3 rounded-full font-semibold">
+                        <span data-en="Send via PayPal" data-pt="Enviar via PayPal"></span> 💙
+                    </a>
+                </div>
+            </div>
+
+            <!-- GIFT_OPTIONS_PLACEHOLDER -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="fade-in card p-6">
+                    <h4 class="text-xl font-bold mb-2 text-[var(--beige)]">
+                        <span data-en="Baby Clothes Set" data-pt="Conjunto de Roupas de Bebê"></span>
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span data-en="Soft, organic cotton set for newborns (0-3 months)" data-pt="Conjunto de algodão orgânico macio para recém-nascidos (0-3 meses)"></span>
+                    </p>
+                    <p class="text-lg font-semibold mb-4">€25</p>
+                    <!-- PAYPAL_LINK_PLACEHOLDER -->
+                    <a href="https://paypal.me/yourusername?amount=25" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn-primary inline-block w-full text-center px-4 py-2 rounded-full text-sm font-semibold">
+                        <span data-en="Send via PayPal" data-pt="Enviar via PayPal"></span>
+                    </a>
+                </div>
+
+                <div class="fade-in card p-6">
+                    <h4 class="text-xl font-bold mb-2 text-[var(--beige)]">
+                        <span data-en="Baby Blanket" data-pt="Manta de Bebê"></span>
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span data-en="Cozy, hypoallergenic blanket perfect for cuddling" data-pt="Manta aconchegante e hipoalergênica perfeita para embalar"></span>
+                    </p>
+                    <p class="text-lg font-semibold mb-4">€30</p>
+                    <!-- PAYPAL_LINK_PLACEHOLDER -->
+                    <a href="https://paypal.me/yourusername?amount=30" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn-primary inline-block w-full text-center px-4 py-2 rounded-full text-sm font-semibold">
+                        <span data-en="Send via PayPal" data-pt="Enviar via PayPal"></span>
+                    </a>
+                </div>
+
+                <div class="fade-in card p-6">
+                    <h4 class="text-xl font-bold mb-2 text-[var(--beige)]">
+                        <span data-en="Nursing Pillow" data-pt="Travesseiro de Amamentação"></span>
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span data-en="Ergonomic pillow for comfortable feeding" data-pt="Travesseiro ergonômico para alimentação confortável"></span>
+                    </p>
+                    <p class="text-lg font-semibold mb-4">€35</p>
+                    <!-- PAYPAL_LINK_PLACEHOLDER -->
+                    <a href="https://paypal.me/yourusername?amount=35" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn-primary inline-block w-full text-center px-4 py-2 rounded-full text-sm font-semibold">
+                        <span data-en="Send via PayPal" data-pt="Enviar via PayPal"></span>
+                    </a>
+                </div>
+
+                <div class="fade-in card p-6">
+                    <h4 class="text-xl font-bold mb-2 text-[var(--beige)]">
+                        <span data-en="Diaper Bag" data-pt="Bolsa de Fraldas"></span>
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        <span data-en="Spacious, stylish bag with multiple compartments" data-pt="Bolsa espaçosa e elegante com vários compartimentos"></span>
+                    </p>
+                    <p class="text-lg font-semibold mb-4">€40</p>
+                    <!-- PAYPAL_LINK_PLACEHOLDER -->
+                    <a href="https://paypal.me/yourusername?amount=40" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn-primary inline-block w-full text-center px-4 py-2 rounded-full text-sm font-semibold">
+                        <span data-en="Send via PayPal" data-pt="Enviar via PayPal"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-padding bg-[var(--beige)]/20 text-center">
+        <div class="max-w-4xl mx-auto fade-in">
+            <p class="text-xl md:text-2xl script-font mb-4">
+                <span data-en="Thank you for being part of our growing family — your kindness means the world to us 💛" data-pt="Obrigado por fazer parte da nossa família em crescimento — sua bondade significa o mundo para nós 💛"></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Management
+        const translations = {
+            en: {
+                langText: 'PT',
+                heroTitle: "Welcome to Our Baby Shower 🎉",
+                heroSubtext: "We're so excited to welcome our new baby boy! Instead of traditional gifts, we're inviting you to share joy in a meaningful way.",
+                heroParagraph: "Your presence and love mean the world to us. If you'd like to celebrate in a special way, we'd be honored if you'd consider contributing to a cause close to our hearts.",
+                eventTitle: "Join Us for the Celebration",
+                eventDate: "November 8th",
+                eventTime: "at 12:30 PM",
+                eventAddress: "Rua das Andresas 227<br>Salão de Festas<br>Porto, Portugal",
+                eventMap: "View on Google Maps",
+                donationTitle: "What We Achieved Together 🐾",
+                donationText: "For Oliver's 4th birthday, we raised €130 (including our contribution) to buy food and supplies for rescued animals at a shelter in Colombia — where Adriana grew up. Here's how your kindness made a difference.",
+                giftTitle: "Still Want to Give a Gift?",
+                giftText: "Your presence and love are more than enough! But if you'd like to give a small present, here are a few easy options.",
+                footerText: "Thank you for being part of our growing family — your kindness means the world to us 💛"
+            },
+            pt: {
+                langText: 'EN',
+                heroTitle: "Bem-vindos ao Nosso Chá de Bebê 🎉",
+                heroSubtext: "Estamos muito felizes em receber nosso novo bebê! Em vez de presentes tradicionais, convidamos você a compartilhar alegria de uma forma significativa.",
+                heroParagraph: "Sua presença e amor significam tudo para nós. Se você gostaria de celebrar de uma forma especial, ficaríamos honrados se você considerasse contribuir para uma causa próxima ao nosso coração.",
+                eventTitle: "Junte-se a Nós na Celebração",
+                eventDate: "8 de Novembro",
+                eventTime: "às 12h30",
+                eventAddress: "Rua das Andresas 227<br>Salão de Festas<br>Porto, Portugal",
+                eventMap: "Ver no Google Maps",
+                donationTitle: "O Que Conseguimos Juntos 🐾",
+                donationText: "Para o 4º aniversário do Oliver, arrecadamos €130 (incluindo nossa contribuição) para comprar comida e suprimentos para animais resgatados em um abrigo na Colômbia — onde a Adriana cresceu. Veja como sua bondade fez a diferença.",
+                giftTitle: "Ainda Quer Dar um Presente?",
+                giftText: "Sua presença e amor são mais que suficientes! Mas se você gostaria de dar um pequeno presente, aqui estão algumas opções fáceis.",
+                footerText: "Obrigado por fazer parte da nossa família em crescimento — sua bondade significa o mundo para nós 💛"
+            }
+        };
+
+        // Detect and set initial language
+        function getInitialLanguage() {
+            const saved = localStorage.getItem('language');
+            if (saved) return saved;
+            const browserLang = navigator.language || navigator.userLanguage;
+            return browserLang.startsWith('pt') ? 'pt' : 'en';
+        }
+
+        let currentLang = getInitialLanguage();
+
+        // Update all text content
+        function updateLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update elements with data-en and data-pt attributes
+            document.querySelectorAll('[data-en], [data-pt]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (el.tagName === 'IMG') {
+                        el.alt = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+
+            // Update language toggle button
+            const langToggle = document.getElementById('langToggle');
+            const langText = document.getElementById('langText');
+            if (langToggle && langText) {
+                langText.textContent = translations[lang].langText;
+            }
+
+            // Update page language attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Language toggle
+        document.getElementById('langToggle').addEventListener('click', () => {
+            const newLang = currentLang === 'en' ? 'pt' : 'en';
+            updateLanguage(newLang);
+        });
+
+        // Initialize language
+        updateLanguage(currentLang);
+
+        // Smooth scroll animation
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Intersection Observer for fade-in animations
+        function setupFadeInAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setupSmoothScroll();
+            setupFadeInAnimations();
+            
+            // Show hero immediately
+            const hero = document.querySelector('#hero .fade-in');
+            if (hero) {
+                setTimeout(() => hero.classList.add('visible'), 100);
+            }
+        });
+    </script>
+</body>
+</html>
+
