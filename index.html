@@ -586,6 +586,14 @@
                        class="btn-primary inline-block px-6 py-3 rounded-full font-semibold">
                         <span data-en="Send via PayPal" data-pt="Enviar via PayPal"></span> 💙
                     </a>
+                    <button type="button" 
+                            class="btn-primary inline-block px-6 py-3 rounded-full font-semibold mt-4"
+                            onclick="copyPhoneToClipboard()">
+                        <span data-en="Send via MB WAY" data-pt="Enviar via MB WAY"></span> ❤️
+                    </button>
+                    <p id="phone-copy-feedback" class="text-sm text-gray-500 italic mt-2 hidden">
+                        <span data-en="Phone number copied!" data-pt="Número copiado!"></span>
+                    </p>
                 </div>
             </div>
 
@@ -754,11 +762,65 @@
             }
         }
 
+        // Phone number obfuscation - decode phone number
+        let decodedPhoneNumber = '';
+        function decodePhoneNumber() {
+            const parts = ['9', '148', '572', '90'];
+            decodedPhoneNumber = parts[0] + parts[1] + parts[2] + parts[3];
+        }
+
+        // Copy phone number to clipboard
+        async function copyPhoneToClipboard() {
+            if (!decodedPhoneNumber) {
+                decodePhoneNumber();
+            }
+
+            try {
+                // Try modern Clipboard API first
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(decodedPhoneNumber);
+                } else {
+                    // Fallback for older browsers
+                    const textarea = document.createElement('textarea');
+                    textarea.value = decodedPhoneNumber;
+                    textarea.style.position = 'fixed';
+                    textarea.style.opacity = '0';
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                }
+
+                // Show feedback message
+                showCopyFeedback();
+            } catch (err) {
+                console.error('Failed to copy phone number:', err);
+                // Still show feedback even if copy fails silently
+                showCopyFeedback();
+            }
+        }
+
+        // Show feedback message when phone number is copied
+        function showCopyFeedback() {
+            const feedbackElement = document.getElementById('phone-copy-feedback');
+            if (!feedbackElement) return;
+
+            // Update language content using the existing updateLanguage mechanism
+            // The element already has data-en and data-pt attributes, just show it
+            feedbackElement.classList.remove('hidden');
+
+            // Hide after 3 seconds
+            setTimeout(() => {
+                feedbackElement.classList.add('hidden');
+            }, 3000);
+        }
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
             setupSmoothScroll();
             setupFadeInAnimations();
             decodeEmail(); // Decode and display obfuscated email
+            decodePhoneNumber(); // Decode phone number for clipboard use
             
             // Show hero immediately
             const hero = document.querySelector('#hero .fade-in');
