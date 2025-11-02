@@ -119,6 +119,39 @@
             transform: translateY(-2px);
         }
 
+        /* Donation button with glow effect */
+        .btn-donation {
+            background-color: var(--beige);
+            color: var(--text-dark);
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            box-shadow: 0 4px 25px rgba(212, 196, 176, 0.8), 
+                        0 0 40px rgba(245, 214, 196, 0.7),
+                        0 0 60px rgba(255, 200, 150, 0.4),
+                        0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(212, 196, 176, 0.3);
+        }
+
+        .btn-donation:hover {
+            background-color: #C4B39E;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 35px rgba(212, 196, 176, 0.9), 
+                        0 0 60px rgba(245, 214, 196, 0.8),
+                        0 0 80px rgba(255, 200, 150, 0.5),
+                        0 4px 15px rgba(0, 0, 0, 0.15);
+            border-color: rgba(212, 196, 176, 0.5);
+        }
+
+        @media (min-width: 768px) {
+            .btn-donation {
+                padding: 1.25rem 3rem;
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+        }
+
         /* Colored text highlights */
         .text-highlight-peach {
             color: #C97A5F;
@@ -413,14 +446,6 @@
                 <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
                     <span data-en="Your kindness has already made a real difference! For Oliver's 4th birthday, we raised <span class='text-highlight-mint'>€130</span> to support rescued animals at <span class='text-highlight-peach'>Fundación Voces Inocentes</span> in <span class='text-highlight-peach'>Colombia</span>. Now, as we welcome our new little one, we'd love to continue that tradition of compassion." data-pt="Sua bondade já fez uma diferença real! Para o 4º aniversário do Oliver, arrecadamos <span class='text-highlight-mint'>€130</span> para apoiar animais resgatados na <span class='text-highlight-peach'>Fundación Voces Inocentes</span> na <span class='text-highlight-peach'>Colômbia</span>. Agora, ao recebermos nosso novo pequenino, adoraríamos continuar essa tradição de compaixão."></span>
                 </p>
-                <div class="mt-8 fade-in">
-                    <a href="https://www.paypal.com/pools/c/9jGAH6ejPU" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="btn-primary inline-block px-8 py-4 rounded-full font-semibold text-lg md:text-xl hover:scale-105 transition-transform duration-200">
-                        <span data-en="Donate to Help Animals 🐾" data-pt="Doe para Ajudar os Animais 🐾"></span>
-                    </a>
-                </div>
             </div>
 
             <!-- SHELTER_PHOTOS_PLACEHOLDER -->
@@ -477,6 +502,19 @@
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Donation Button -->
+            <div class="text-center mt-12 mb-8 fade-in">
+                <p class="text-sm text-gray-600 mb-4 italic">
+                    <span data-en="Any amount makes a difference" data-pt="Qualquer quantia faz a diferença"></span>
+                </p>
+                <a href="https://www.paypal.com/pools/c/9jGAH6ejPU" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="btn-donation inline-block rounded-full font-semibold">
+                    <span data-en="Continue the Tradition of Compassion 💛" data-pt="Continue a Tradição de Compaixão 💛"></span>
+                </a>
             </div>
         </div>
     </section>
