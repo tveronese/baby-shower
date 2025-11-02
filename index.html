@@ -515,7 +515,7 @@
                         <span data-en="A convenient way to let us choose what we need most for our little one." data-pt="Uma forma conveniente de nos deixar escolher o que mais precisamos para nosso pequeno."></span>
                     </p>
                     <p class="mb-6 text-sm text-gray-600">
-                        <span data-en="Recipient email:" data-pt="E-mail do destinatário:"></span> <strong>tveronese@gmail.com</strong>
+                        <span data-en="Recipient email:" data-pt="E-mail do destinatário:"></span> <strong id="email-display"></strong>
                     </p>
                     <a href="https://www.amazon.es/Cheques-Regalo-Amazon-es-mail-Amazon/dp/B07SS5PFJK" 
                        target="_blank" 
@@ -767,10 +767,21 @@
             });
         }
 
+        // Email obfuscation - decode and display email
+        function decodeEmail() {
+            const parts = ['tver', 'ones', 'e', '@', 'gm', 'ail', '.', 'com'];
+            const email = parts[0] + parts[1] + parts[2] + parts[3] + parts[4] + parts[5] + parts[6] + parts[7];
+            const emailDisplay = document.getElementById('email-display');
+            if (emailDisplay) {
+                emailDisplay.textContent = email;
+            }
+        }
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
             setupSmoothScroll();
             setupFadeInAnimations();
+            decodeEmail(); // Decode and display obfuscated email
             
             // Show hero immediately
             const hero = document.querySelector('#hero .fade-in');
