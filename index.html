@@ -448,9 +448,9 @@
             </div>
 
             <div class="fade-in flex justify-center">
-                <div class="card card-border-lavender overflow-hidden w-full max-w-xs sm:max-w-sm">
-                    <div class="aspect-[9/16] max-h-[70vh] bg-gray-200 flex items-center justify-center">
-                        <video class="w-full h-full object-contain" controls>
+                <div class="card card-border-lavender overflow-hidden" style="width: min(320px, calc(70vh * 9 / 16)); max-width: min(320px, calc(100vw - 2rem));">
+                    <div style="aspect-ratio: 9/16; max-height: 70vh; width: 100%;">
+                        <video class="w-full h-full" controls style="display: block; object-fit: contain;">
                             <source src="assets/refugio_voces_inocentes.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
